@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Adhoc_sdk">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Demo/libs/Adhoc_sdk.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
