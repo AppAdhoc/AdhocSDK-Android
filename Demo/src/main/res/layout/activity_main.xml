@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dip"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_marginTop="10dip"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_buttons">
+        <Button
+            android:id="@+id/button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/testButton"
+            android:text="模块开关测试" />
+        <Button
+            android:id="@+id/btn_track"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/testButton"
+            android:text="优化指标测试" />
+        <Button
+            android:id="@+id/btn_autotrack"
+            style="@style/testButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="自动统计测试" />
+        <Button
+            android:id="@+id/btn001"
+            style="@style/testButton"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="自动统计测试" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

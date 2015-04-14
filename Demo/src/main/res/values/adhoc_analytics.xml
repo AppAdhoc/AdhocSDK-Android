@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="TypographyDashes">
+    <!--Replace placeholder ID with your AdhocAppKey-->
+    <string name="AdhocAppKey">ADHOC_551e3abe87b3ca216b2fb1cc</string>
+</resources>

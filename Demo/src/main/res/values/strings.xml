@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AbTestDemo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="flagTest">模块开关测试</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="title_activity_tracking">TrackingActivity</string>
+    <string name="title_activity_auto_tracking">AutoTrackingActivity</string>
+    <string name="text_tracking">点击上报统计信息</string>
+    <string name="module_text">
+        模块测试介绍:开发者获取开关，通过对开关的值来判断，
+        选择页面的展示逻辑。下面是一个简单例子通过模块开关来控制BUTTON的显示，
+        当收到开关是vualue是false的时候，显示“实验版本A”，当value是true，
+        展示button为“实验版本B”.未取到模块开关时为“默认版本”.
+    </string>
+</resources>
