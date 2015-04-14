@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#FFFFFF</color>
+    <color name="text">#6e6e6e</color>
+    <color name="time">#8D8D8D</color>
+    <color name="number">#545454</color>
+    <color name="text_blue">#0291cd</color>
+    <color name="feedback_layout_background">#2EA2D7</color>
+    <color name="red">#ffff00</color>
+    <color name="green">#ff00ff</color>
+</resources>

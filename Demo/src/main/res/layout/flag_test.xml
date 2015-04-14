@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dip"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_marginTop="10dip"
+        android:id="@+id/tv01"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:textSize="12dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/module_text" />
+
+   <Button
+        android:layout_marginTop="10dip"
+        android:id="@+id/btn01"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="@string/flagTest" />
+
+
+</LinearLayout>
