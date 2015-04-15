@@ -23,7 +23,7 @@ public class TrackingActivity extends AdhocActivity {
         tv_tracking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 统计key：‘payment’ value：123. "Payment" 为ADHOC 网站后台定义。
+                // 统计key：‘payment’ value：100. "Payment" 为ADHOC 网站后台定义。
                 AdhocTracker.getInstance(TrackingActivity.this).incrementStat("Payment", 100);
                 Toast.makeText(TrackingActivity.this,"上报统计信息到ADHOC后台",Toast.LENGTH_LONG).show();
             }
