@@ -48,12 +48,6 @@ public class FlagTestActivity extends AdhocActivity {
                 btn01.setTextSize(getResources().getDimension(R.dimen.textsize_small));
                 btn01.setText("实验版本B");
             }
-        }else{
-            Toast.makeText(FlagTestActivity.this,"no net flags is null",Toast.LENGTH_LONG).show();
-            btn01.setBackgroundColor(getResources().getColor(android.R.color.black));
-            btn01.setTextColor(getResources().getColor(android.R.color.white));
-            btn01.setTextSize(getResources().getDimension(R.dimen.textsize_small));
-            btn01.setText("默认版本");
         }
     }
 
