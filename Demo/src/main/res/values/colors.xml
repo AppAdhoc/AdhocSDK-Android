@@ -8,4 +8,10 @@
     <color name="feedback_layout_background">#2EA2D7</color>
     <color name="red">#ffff00</color>
     <color name="green">#ff00ff</color>
+    <color name="blue">#5F40C1</color>
+    <color name="red2">#DF5E26</color>
+    <color name="grey">#77706E</color>
+    <drawable name="red2_drawable">#DF5E26</drawable>
+    <drawable name="grey_drawable">#77706E</drawable>
+    <drawable name="blue_drawable">#5F40C1</drawable>
 </resources>

@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.adhoc.activities.BtnColorActivity;
 import com.example.adhoc.activities.ClickAutoStatActivity;
 import com.example.adhoc.activities.FlagTestActivity;
 import com.example.adhoc.activities.TrackingActivity;
@@ -26,6 +27,14 @@ public class MainActivity extends AdhocActivity{
             public void onClick(View v) {
                 // 模块开关例子
                 startActivity(new Intent(MainActivity.this, FlagTestActivity.class));
+
+            }
+        });
+        findViewById(R.id.btn_color).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 模块开关例子
+                startActivity(new Intent(MainActivity.this, BtnColorActivity.class));
 
             }
         });

@@ -11,7 +11,9 @@
     <string name="module_text">
         模块测试介绍:开发者获取开关，通过对开关的值来判断，
         选择页面的展示逻辑。下面是一个简单例子通过模块开关来控制BUTTON的显示，
-        当收到开关是vualue是false的时候，显示“实验版本A”，当value是true，
+        当收到开关是value是false的时候，显示“实验版本A”，当value是true，
         展示button为“实验版本B”.未取到模块开关时为“默认版本”.
     </string>
+    <string name="btn_select_A_text">按钮A版本</string>
+    <string name="btn_select_B_text">按钮B版本</string>
 </resources>

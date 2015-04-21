@@ -40,12 +40,10 @@
             android:name="com.example.adhoc.activities.ClickAutoStatActivity"
             android:label="@string/title_activity_auto_tracking" >
         </activity>
+        <activity
+            android:name="com.example.adhoc.activities.BtnColorActivity" >
+        </activity>
 
-        <provider
-            android:name="com.adhoc.adhocsdk.AdhocProvider"
-            android:authorities="com.adhoc.adhocsdk.AdhocProvider"
-            android:exported="true">
-        </provider>
     </application>
 
 </manifest>

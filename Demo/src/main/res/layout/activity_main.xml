@@ -30,6 +30,12 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="自动统计测试" />
+        <Button
+            android:id="@+id/btn_color"
+            style="@style/testButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="显示不一样的按钮" />
 
     </LinearLayout>
 
