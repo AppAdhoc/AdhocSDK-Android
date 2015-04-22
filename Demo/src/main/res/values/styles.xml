@@ -8,7 +8,7 @@
     
     <style name="testButton">
 
-        <item name="android:layout_margin">10dip</item>
+        <item name="android:layout_margin">8dip</item>
 
         <item name="android:textSize">22dip</item>
         

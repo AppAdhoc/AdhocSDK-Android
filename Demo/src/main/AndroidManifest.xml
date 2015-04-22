@@ -43,6 +43,27 @@
         <activity
             android:name="com.example.adhoc.activities.BtnColorActivity" >
         </activity>
+        <activity
+            android:name="com.example.adhoc.activities.LoginTestActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.PageOrderGoodsDisplayActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.PageOrderloginActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.PageOrderPamentActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.PageOrderSuccessActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.TestListActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.BottomTestActivity" >
+        </activity>
 
     </application>
 
