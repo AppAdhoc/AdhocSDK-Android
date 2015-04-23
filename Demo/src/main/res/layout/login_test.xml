@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="10dip"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/et_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="60dip"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/phonenum"
+                android:inputType="number"
+                android:maxLength="13" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="60dip"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:textSize="18dip" >
+            </EditText>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:text="登录"
+            android:id="@+id/btn_login"
+            android:textSize="22dp"
+            android:layout_gravity="right"
+            android:layout_height="64dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_other"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:layout_height="64dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="其它方式登录："
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical"
+            android:layout_height="fill_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/iv_qzone"
+            android:src="@mipmap/btn_share_qzone"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/iv_tencent"
+            android:src="@mipmap/btn_share_tencent"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/iv_weibo"
+            android:src="@mipmap/btn_share_weibo"/>
+
+        </LinearLayout>
+
+
+</LinearLayout>

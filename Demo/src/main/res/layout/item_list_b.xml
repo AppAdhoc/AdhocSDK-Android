@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_drawable"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tv_goodsname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageview"
+        android:maxLines="2"
+        android:text="【百草味-紫薯花生180g】花生米 休闲零食坚果炒货 台湾风味" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_goodsname"
+        android:gravity="center"
+        android:text="￥100.00"
+        android:textColor="#FF7F24" />
+
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,15 +31,38 @@
             android:layout_height="wrap_content"
             android:text="自动统计测试" />
         <Button
-            android:id="@+id/btn001"
+            android:id="@+id/btn_color"
             style="@style/testButton"
-            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="自动统计测试" />
+            android:text="测试按钮" />
+        <Button
+            android:id="@+id/login_test"
+            style="@style/testButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="测试登录" />
+        <Button
+            android:id="@+id/page_order"
+            style="@style/testButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="测试页面顺序" />
+        <Button
+            android:id="@+id/test_list"
+            style="@style/testButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="测试列表展示" />
+        <Button
+            android:id="@+id/bottom_list"
+            style="@style/testButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="底部展示测试" />
 
     </LinearLayout>
 
 
 
-</LinearLayout>
+</ScrollView>

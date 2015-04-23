@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dip"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_marginTop="10dip"
+        android:id="@+id/btn_click"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:padding="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="64dip"
+        android:textSize="22dip"
+        android:textColor="@color/selector_btn_click"
+        android:text="@string/btn_select_A_text" />
+
+    <TextView
+        android:layout_marginTop="10dip"
+        android:id="@+id/tv_tip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:textSize="12dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

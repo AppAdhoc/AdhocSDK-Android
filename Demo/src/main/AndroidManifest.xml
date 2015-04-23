@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
@@ -33,19 +34,34 @@
             android:label="@string/title_activity_base" >
         </activity>
         <activity
-            android:name="com.example.adhoc.activities.TrackingActivity"
-            android:label="@string/title_activity_tracking" >
-        </activity>
-        <activity
             android:name="com.example.adhoc.activities.ClickAutoStatActivity"
             android:label="@string/title_activity_auto_tracking" >
         </activity>
+        <activity
+            android:name="com.example.adhoc.activities.BtnColorActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.LoginTestActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.PageOrderGoodsDisplayActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.PageOrderloginActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.PageOrderPamentActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.PageOrderSuccessActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.TestListActivity" >
+        </activity>
+        <activity
+            android:name="com.example.adhoc.activities.BottomTestActivity" >
+        </activity>
 
-        <provider
-            android:name="com.adhoc.adhocsdk.AdhocProvider"
-            android:authorities="com.adhoc.adhocsdk.AdhocProvider"
-            android:exported="true">
-        </provider>
     </application>
 
 </manifest>

@@ -1,0 +1,75 @@
+package com.example.adhoc.activities;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.adhoc.adhocsdk.AdhocTracker;
+import com.adhoc.adhocsdk.ExperimentFlags;
+import com.example.adhoc.abtestdemo.MainActivity;
+import com.example.adhoc.abtestdemo.R;
+import com.example.adhoc.abtestdemo.Toaster;
+import com.example.adhoc.base.AdhocActivity;
+
+
+public class BtnColorActivity extends AdhocActivity {
+
+    private Button btnClick;
+    private TextView tvTIP;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.btn_color);
+        tvTIP = (TextView) findViewById(R.id.tv_tip);
+        btnClick = (Button) findViewById(R.id.btn_click);
+        btnClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AdhocTracker.getInstance(BtnColorActivity.this).incrementStat("btn_color_click",1);
+//                TODO --
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // 获取模块开关
+        ExperimentFlags flags = AdhocTracker.getInstance(BtnColorActivity.this).getExperimentFlags();
+        // 'model01' 对应网站添加的产品模块名称
+        boolean flag = flags.getBooleanFlag("btn_color");
+        // 根据获取模块的值，开发不同的业务逻辑
+        if (flag == false) {
+//            Toaster.toast(BtnColorActivity.this, "has net flags is false");
+            btnClick.setBackgroundDrawable(getResources().getDrawable(R.drawable.selector_btn_bg_a));
+            btnClick.setText(getResources().getString(R.string.btn_select_A_text));
+        } else {
+//            Toaster.toast(BtnColorActivity.this, "has net flags is true");
+            btnClick.setBackgroundDrawable(getResources().getDrawable(R.drawable.selector_btn_bg_b));
+            btnClick.setText(getString(R.string.btn_select_B_text));
+        }
+        tvTIP.setText(flags.toString());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+}

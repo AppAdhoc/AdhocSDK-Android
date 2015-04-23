@@ -5,32 +5,29 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
-import com.adhoc.adhocsdk.AdhocConstants;
-import com.adhoc.utils.Toaster;
-import com.adhoc.volley.Request;
-import com.adhoc.volley.RequestQueue;
-import com.adhoc.volley.Response;
-import com.adhoc.volley.VolleyError;
-import com.adhoc.volley.toolbox.JsonObjectRequest;
-import com.adhoc.volley.toolbox.Volley;
+import com.adhoc.adhocsdk.AdhocTracker;
+import com.adhoc.adhocsdk.ExperimentFlags;
+import com.example.adhoc.activities.BottomTestActivity;
+import com.example.adhoc.activities.BtnColorActivity;
 import com.example.adhoc.activities.ClickAutoStatActivity;
 import com.example.adhoc.activities.FlagTestActivity;
-import com.example.adhoc.activities.TrackingActivity;
+import com.example.adhoc.activities.LoginTestActivity;
+import com.example.adhoc.activities.PageOrderGoodsDisplayActivity;
+import com.example.adhoc.activities.PageOrderloginActivity;
+import com.example.adhoc.activities.TestListActivity;
 import com.example.adhoc.base.AdhocActivity;
-
-import org.json.JSONObject;
-
 
 public class MainActivity extends AdhocActivity{
 
-    RequestQueue rq = null;
+    Button pageOrder = null;
+    ExperimentFlags flags = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rq =  Volley.newRequestQueue(this);
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,16 +37,15 @@ public class MainActivity extends AdhocActivity{
 
             }
         });
-
-        findViewById(R.id.btn_track).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_color).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // 统计计数例子
-                startActivity(new Intent(MainActivity.this, TrackingActivity.class));
+                // 按钮颜色对比测试
+                startActivity(new Intent(MainActivity.this, BtnColorActivity.class));
 
             }
         });
+
         findViewById(R.id.btn_autotrack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,28 +55,71 @@ public class MainActivity extends AdhocActivity{
 
             }
         });
-        findViewById(R.id.btn001).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.test_list).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                 // TEST
-                JsonObjectRequest jr = new JsonObjectRequest(Request.Method.GET, AdhocConstants.ADHOC_SERVER_URL,null,new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Toaster.toast(MainActivity.this,response.toString());
-                    }
-                },new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toaster.toast(MainActivity.this,error.toString());
-                    }
-                });
-                jr.setShouldCache(false);
-                rq.add(jr);
+                // 显示不同列表测试
+                startActivity(new Intent(MainActivity.this, TestListActivity.class));
+
+            }
+        });
+        findViewById(R.id.bottom_list).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // 显示不同列表测试
+                startActivity(new Intent(MainActivity.this, BottomTestActivity.class));
+
+            }
+        });
+        findViewById(R.id.login_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // 登录测试
+                startActivity(new Intent(MainActivity.this, LoginTestActivity.class));
 
             }
         });
 
+        pageOrder = (Button) findViewById(R.id.page_order);
+
+        pageOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int order = flags.getIntegerFlag("order");
+                Intent intent = new Intent();
+                intent.putExtra("order",order);
+                switch (order){
+                    case 0 :
+                        // (第一步)登陆--商品--支付--交易成功
+                        intent.setClass(MainActivity.this,PageOrderloginActivity.class);
+                        break;
+                    case 1 :
+                        // (第一步)商品展示--登陆--支付--交易成功
+                        intent.setClass(MainActivity.this,PageOrderGoodsDisplayActivity.class);
+                        break;
+                    case 2 :
+                        // （第一步）商品展示--支付--登陆--交易成功
+                        intent.setClass(MainActivity.this,PageOrderGoodsDisplayActivity.class);
+                        break;
+                    default:
+                        break;
+                }
+                startActivity(intent);
+
+            }
+        });
+
+
+    }
+
+
+    @Override
+    protected void onStart() {
+        flags = AdhocTracker.getInstance(this).getExperimentFlags();
+        super.onStart();
     }
 
     @Override
@@ -99,5 +138,7 @@ public class MainActivity extends AdhocActivity{
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }
