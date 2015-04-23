@@ -33,10 +33,6 @@
             android:label="@string/title_activity_base" >
         </activity>
         <activity
-            android:name="com.example.adhoc.activities.TrackingActivity"
-            android:label="@string/title_activity_tracking" >
-        </activity>
-        <activity
             android:name="com.example.adhoc.activities.ClickAutoStatActivity"
             android:label="@string/title_activity_auto_tracking" >
         </activity>

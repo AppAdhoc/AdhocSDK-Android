@@ -17,7 +17,6 @@ import com.example.adhoc.activities.LoginTestActivity;
 import com.example.adhoc.activities.PageOrderGoodsDisplayActivity;
 import com.example.adhoc.activities.PageOrderloginActivity;
 import com.example.adhoc.activities.TestListActivity;
-import com.example.adhoc.activities.TrackingActivity;
 import com.example.adhoc.base.AdhocActivity;
 
 
@@ -49,15 +48,6 @@ public class MainActivity extends AdhocActivity{
             }
         });
 
-        findViewById(R.id.btn_track).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 统计计数例子
-                startActivity(new Intent(MainActivity.this, TrackingActivity.class));
-
-            }
-        });
         findViewById(R.id.btn_autotrack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

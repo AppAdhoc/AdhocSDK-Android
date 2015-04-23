@@ -1,17 +1,13 @@
 package com.example.adhoc.activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,6 +20,7 @@ import com.example.adhoc.quote.AdapterB;
 import com.example.adhoc.quote.AdapterDisplayA;
 import com.example.adhoc.quote.GoodsBean;
 import com.example.adhoc.quote.MultiColumnListView;
+import com.example.adhoc.quote.PLA_AdapterView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,6 +47,19 @@ public class TestListActivity extends AdhocActivity {
         aAdapter = new AdapterDisplayA(this,data);
         bAdapter = new AdapterB(this,data);
 
+        lista.setOnItemClickListener(new PLA_AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(PLA_AdapterView<?> parent, View view, int position, long id) {
+
+                AdhocTracker.getInstance(TestListActivity.this).incrementStat("goods_item_click",1);
+            }
+        });
+        listb.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AdhocTracker.getInstance(TestListActivity.this).incrementStat("goods_item_click",1);
+            }
+        });
 
     }
 
