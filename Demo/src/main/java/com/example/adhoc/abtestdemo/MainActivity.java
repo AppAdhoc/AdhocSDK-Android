@@ -19,8 +19,6 @@ import com.example.adhoc.activities.PageOrderloginActivity;
 import com.example.adhoc.activities.TestListActivity;
 import com.example.adhoc.base.AdhocActivity;
 
-
-
 public class MainActivity extends AdhocActivity{
 
     Button pageOrder = null;
