@@ -52,14 +52,14 @@ public class FlagTestActivity extends AdhocActivity {
                 btn01.setTextColor(getResources().getColor(android.R.color.white));
                 btn01.setTextSize(getResources().getDimension(R.dimen.textsize_small));
                 btn01.setText("实验版本B");
-                tv_tracking.setVisibility(View.GONE);
+                tv_tracking.setVisibility(View.VISIBLE);
             }else{
                 Toast.makeText(FlagTestActivity.this,"has net flags is false" ,Toast.LENGTH_LONG).show();
                 btn01.setBackgroundColor(getResources().getColor(android.R.color.white));
                 btn01.setTextColor(getResources().getColor(android.R.color.black));
                 btn01.setTextSize(getResources().getDimension(R.dimen.textsize));
                 btn01.setText("实验版本A");
-                tv_tracking.setVisibility(View.VISIBLE);
+                tv_tracking.setVisibility(View.GONE);
             }
         }
     }

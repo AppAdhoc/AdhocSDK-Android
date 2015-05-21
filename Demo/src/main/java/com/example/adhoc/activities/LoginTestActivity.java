@@ -46,7 +46,7 @@ public class LoginTestActivity extends AdhocActivity {
         if (flag == false) {
             findViewById(R.id.layout_other).setVisibility(View.GONE);
         } else {
-            findViewById(R.id.layout_other).setVisibility(View.INVISIBLE);
+            findViewById(R.id.layout_other).setVisibility(View.VISIBLE);
         }
     }
 

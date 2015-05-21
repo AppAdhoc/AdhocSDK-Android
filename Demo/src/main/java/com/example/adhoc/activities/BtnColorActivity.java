@@ -29,7 +29,7 @@ public class BtnColorActivity extends AdhocActivity {
         btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdhocTracker.getInstance(BtnColorActivity.this).incrementStat("btn_color_click",1);
+                AdhocTracker.getInstance(BtnColorActivity.this).incrementStat("btn_color_clicks",1);
 //                TODO --
             }
         });

@@ -26,7 +26,7 @@ public class PageOrderPamentActivity extends AdhocActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.putExtra("flags",order);
+                intent.putExtra("order",order);
                 switch (order){
                     case 0 :
                         // (第一步)登陆--商品--支付--交易成功

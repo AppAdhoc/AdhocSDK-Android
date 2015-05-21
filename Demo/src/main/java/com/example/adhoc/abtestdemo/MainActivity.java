@@ -88,7 +88,7 @@ public class MainActivity extends AdhocActivity{
         pageOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int order = flags.getIntegerFlag("order");
+                int order = flags.getIntegerFlag("page_order0");
                 Intent intent = new Intent();
                 intent.putExtra("order",order);
                 switch (order){
