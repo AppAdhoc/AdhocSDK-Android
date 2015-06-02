@@ -51,13 +51,13 @@ public class TestListActivity extends AdhocActivity {
             @Override
             public void onItemClick(PLA_AdapterView<?> parent, View view, int position, long id) {
 
-                AdhocTracker.getInstance(TestListActivity.this).incrementStat("goods_item_click",1);
+                AdhocTracker.incrementStat(TestListActivity.this, "goods_item_click", 1);
             }
         });
         listb.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AdhocTracker.getInstance(TestListActivity.this).incrementStat("goods_item_click",1);
+                AdhocTracker.incrementStat(TestListActivity.this,"goods_item_click",1);
             }
         });
 
@@ -68,7 +68,7 @@ public class TestListActivity extends AdhocActivity {
     protected void onStart() {
         super.onStart();
         // 获取模块开关
-        ExperimentFlags flags = AdhocTracker.getInstance(TestListActivity.this).getExperimentFlags();
+        ExperimentFlags flags = AdhocTracker.getExperimentFlags(TestListActivity.this);
         // 'list_test' 对应网站添加的产品模块名称
         boolean defaultFlag = flags.getBooleanFlag("test_diff_list");
         // 根据获取模块的值，开发不同的业务逻辑

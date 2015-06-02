@@ -39,7 +39,7 @@ public class ClickAutoStatActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                AdhocTracker.getInstance(ClickAutoStatActivity.this).incrementStat("click01",1);
+                AdhocTracker.incrementStat(ClickAutoStatActivity.this, "click01", 1);
                 // 页面中随意添加view
                 if(Math.abs(random.nextInt(100))%2==0){
 
@@ -178,7 +178,7 @@ public class ClickAutoStatActivity extends ActionBarActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        AdhocTracker.getInstance(ClickAutoStatActivity.this).autoTracking(event);
+        AdhocTracker.autoTracking(ClickAutoStatActivity.this,event);
         return super.dispatchTouchEvent(event);
     }
 }

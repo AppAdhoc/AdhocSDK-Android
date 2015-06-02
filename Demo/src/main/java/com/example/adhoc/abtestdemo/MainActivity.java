@@ -118,7 +118,7 @@ public class MainActivity extends AdhocActivity{
 
     @Override
     protected void onStart() {
-        flags = AdhocTracker.getInstance(this).getExperimentFlags();
+        flags = AdhocTracker.getExperimentFlags(MainActivity.this);
         super.onStart();
     }
 

@@ -31,7 +31,7 @@ public class FlagTestActivity extends AdhocActivity {
             @Override
             public void onClick(View v) {
                 // 统计key：‘payment’ value：100. "Payment" 为ADHOC 网站后台定义。
-                AdhocTracker.getInstance(FlagTestActivity.this).incrementStat("Payment", 100);
+                AdhocTracker.incrementStat(FlagTestActivity.this, "Payment", 100);
                 Toast.makeText(FlagTestActivity.this,"上报统计信息到ADHOC后台",Toast.LENGTH_LONG).show();
             }
         });
@@ -41,7 +41,7 @@ public class FlagTestActivity extends AdhocActivity {
     protected void onStart() {
         super.onStart();
         // 获取模块开关
-        ExperimentFlags flags = AdhocTracker.getInstance(FlagTestActivity.this).getExperimentFlags();
+        ExperimentFlags flags = AdhocTracker.getExperimentFlags(FlagTestActivity.this);
         if(flags!=null){
             // 'model01' 对应网站添加的产品模块名称
             boolean flag = flags.getBooleanFlag("module01");

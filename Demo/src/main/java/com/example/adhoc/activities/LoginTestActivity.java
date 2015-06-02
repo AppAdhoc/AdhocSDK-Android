@@ -31,7 +31,7 @@ public class LoginTestActivity extends AdhocActivity {
     private View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            AdhocTracker.getInstance(LoginTestActivity.this).incrementStat("login_click", 1);
+            AdhocTracker.incrementStat(LoginTestActivity.this, "login_click", 1);
         }
     };
 
@@ -39,7 +39,7 @@ public class LoginTestActivity extends AdhocActivity {
     protected void onStart() {
         super.onStart();
         // 获取模块开关
-        ExperimentFlags flags = AdhocTracker.getInstance(LoginTestActivity.this).getExperimentFlags();
+        ExperimentFlags flags = AdhocTracker.getExperimentFlags(LoginTestActivity.this);
         // 'model01' 对应网站添加的产品模块名称
         boolean flag = flags.getBooleanFlag("login_test");
         // 根据获取模块的值，开发不同的业务逻辑

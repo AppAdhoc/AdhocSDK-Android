@@ -30,7 +30,7 @@ public class BottomTestActivity extends AdhocActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    AdhocTracker.getInstance(BottomTestActivity.this).incrementStat("bottom_item_click",1);
+                    AdhocTracker.incrementStat(BottomTestActivity.this, "bottom_item_click", 1);
                 }
             });
         }
@@ -40,7 +40,7 @@ public class BottomTestActivity extends AdhocActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    AdhocTracker.getInstance(BottomTestActivity.this).incrementStat("bottom_item_click",1);
+                    AdhocTracker.incrementStat(BottomTestActivity.this,"bottom_item_click",1);
                 }
             });
         }
@@ -51,7 +51,7 @@ public class BottomTestActivity extends AdhocActivity {
     protected void onStart() {
         super.onStart();
         // 获取模块开关
-        ExperimentFlags flags = AdhocTracker.getInstance(BottomTestActivity.this).getExperimentFlags();
+        ExperimentFlags flags = AdhocTracker.getExperimentFlags(BottomTestActivity.this);
         // 'list_test' 对应网站添加的产品模块名称
         boolean defaultFlag = flags.getBooleanFlag("test_bottom_recommend");
         // 根据获取模块的值，开发不同的业务逻辑
