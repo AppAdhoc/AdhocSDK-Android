@@ -11,8 +11,21 @@ public class AdhocActivity extends ActionBarActivity {
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
 
-        AdhocTracker.getInstance(this).autoTracking(event);
+        AdhocTracker.autoTracking(this, event);
 
         return super.dispatchTouchEvent(event);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AdhocTracker.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AdhocTracker.onPause(this);
+    }
+
 }

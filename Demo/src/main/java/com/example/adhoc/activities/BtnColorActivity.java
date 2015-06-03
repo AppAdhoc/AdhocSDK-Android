@@ -29,7 +29,7 @@ public class BtnColorActivity extends AdhocActivity {
         btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdhocTracker.getInstance(BtnColorActivity.this).incrementStat("btn_color_click",1);
+                AdhocTracker.incrementStat(BtnColorActivity.this,"btn_color_clicks",1);
 //                TODO --
             }
         });
@@ -39,7 +39,7 @@ public class BtnColorActivity extends AdhocActivity {
     protected void onStart() {
         super.onStart();
         // 获取模块开关
-        ExperimentFlags flags = AdhocTracker.getInstance(BtnColorActivity.this).getExperimentFlags();
+        ExperimentFlags flags = AdhocTracker.getExperimentFlags(BtnColorActivity.this);
         // 'model01' 对应网站添加的产品模块名称
         boolean flag = flags.getBooleanFlag("btn_color");
         // 根据获取模块的值，开发不同的业务逻辑

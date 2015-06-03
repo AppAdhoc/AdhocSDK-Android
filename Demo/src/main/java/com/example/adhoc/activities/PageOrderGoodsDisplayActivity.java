@@ -19,7 +19,7 @@ public class PageOrderGoodsDisplayActivity extends AdhocActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pageorder_goods_display);
-        order = getIntent().getIntExtra("order",-1);
+        order = getIntent().getIntExtra("order",0);
 
         btnBuy = (Button) findViewById(R.id.btn_buy);
 
@@ -27,7 +27,7 @@ public class PageOrderGoodsDisplayActivity extends AdhocActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.putExtra("flags", order);
+                intent.putExtra("order", order);
                 switch (order) {
                     case 0:
                         // (第一步)登陆--商品--支付--交易成功

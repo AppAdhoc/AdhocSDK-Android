@@ -17,7 +17,7 @@ public class PageOrderSuccessActivity extends AdhocActivity {
         setContentView(R.layout.pageorder_success);
         order = getIntent().getIntExtra("order",0);
         findViewById(R.id.tv_compelete);
-        AdhocTracker.getInstance(PageOrderSuccessActivity.this).incrementStat("buy_success",1);
+        AdhocTracker.incrementStat(PageOrderSuccessActivity.this,"buy_success",1);
     }
 
     @Override
