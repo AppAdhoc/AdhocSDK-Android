@@ -9,6 +9,6 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
         AdhocTracker.initalize(this.getApplicationContext());
-        AdhocTracker.enableDebue(true);
+        AdhocTracker.setEnableDebugMode(true);
     }
 }

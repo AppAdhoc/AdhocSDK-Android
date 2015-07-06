@@ -70,7 +70,7 @@ public class TestListActivity extends AdhocActivity {
         // 获取模块开关
         ExperimentFlags flags = AdhocTracker.getExperimentFlags(TestListActivity.this);
         // 'list_test' 对应网站添加的产品模块名称
-        boolean defaultFlag = flags.getBooleanFlag("test_diff_list");
+        boolean defaultFlag = flags.getBooleanFlag("test_diff_list",false);
         // 根据获取模块的值，开发不同的业务逻辑
         if(defaultFlag){
             lista.setAdapter(aAdapter);
