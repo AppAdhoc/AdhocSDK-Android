@@ -41,7 +41,7 @@ public class LoginTestActivity extends AdhocActivity {
         // 获取模块开关
         ExperimentFlags flags = AdhocTracker.getExperimentFlags(LoginTestActivity.this);
         // 'model01' 对应网站添加的产品模块名称
-        boolean flag = flags.getBooleanFlag("login_test");
+        boolean flag = flags.getBooleanFlag("login_test",false);
         // 根据获取模块的值，开发不同的业务逻辑
         if (flag == false) {
             findViewById(R.id.layout_other).setVisibility(View.GONE);

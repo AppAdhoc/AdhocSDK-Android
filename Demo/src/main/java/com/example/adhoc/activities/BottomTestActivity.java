@@ -52,14 +52,10 @@ public class BottomTestActivity extends AdhocActivity {
         super.onStart();
         // 获取模块开关
         ExperimentFlags flags = AdhocTracker.getExperimentFlags(BottomTestActivity.this);
-        // 'list_test' 对应网站添加的产品模块名称
-        boolean defaultFlag = flags.getBooleanFlag("test_bottom_recommend");
         // 根据获取模块的值，开发不同的业务逻辑
-        if(defaultFlag){findViewById(R.id.layout_history).setVisibility(View.GONE);
+        if(flags.getBooleanFlag("test_bottom_recommend",false)){
+            findViewById(R.id.layout_history).setVisibility(View.GONE);
             findViewById(R.id.layout_other).setVisibility(View.VISIBLE);
-        }else{
-            findViewById(R.id.layout_history).setVisibility(View.VISIBLE);
-            findViewById(R.id.layout_other).setVisibility(View.GONE);
         }
     }
 }
