@@ -14,6 +14,6 @@ public class DemoApplication extends Application {
         HashMap<String,String> map = new HashMap<>();
         map.put("key","value");
         AdhocTracker.setCustomStatParameter(this.getApplicationContext(),map);
-        AdhocTracker.setEnableDebugMode(true);
+        AdhocTracker.setEnableDebugMode(false);
     }
 }
