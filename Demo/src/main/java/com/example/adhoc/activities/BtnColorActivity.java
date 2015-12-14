@@ -39,6 +39,7 @@ public class BtnColorActivity extends AdhocActivity {
     protected void onStart() {
         super.onStart();
         // 获取模块开关
+        // test getClient——id
         ExperimentFlags flags = AdhocTracker.getExperimentFlags(BtnColorActivity.this);
         // 'model01' 对应网站添加的产品模块名称
         boolean flag = flags.getBooleanFlag("btn_color",false);
