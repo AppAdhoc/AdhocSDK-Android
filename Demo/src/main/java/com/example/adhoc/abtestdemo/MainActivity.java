@@ -46,15 +46,15 @@ public class MainActivity extends AdhocActivity{
             }
         });
 
-        findViewById(R.id.btn_autotrack).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 点击自动统计例子
-                startActivity(new Intent(MainActivity.this, ClickAutoStatActivity.class));
-
-            }
-        });
+//        findViewById(R.id.btn_autotrack).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                // 点击自动统计例子
+//                startActivity(new Intent(MainActivity.this, ClickAutoStatActivity.class));
+//
+//            }
+//        });
         findViewById(R.id.test_list).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

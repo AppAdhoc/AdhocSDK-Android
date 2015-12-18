@@ -18,12 +18,12 @@
             android:layout_height="wrap_content"
             style="@style/testButton"
             android:text="模块开关测试" />
-        <Button
-            android:id="@+id/btn_autotrack"
-            style="@style/testButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="自动统计测试" />
+        <!--<Button-->
+            <!--android:id="@+id/btn_autotrack"-->
+            <!--style="@style/testButton"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="自动统计测试" />-->
         <Button
             android:id="@+id/btn_color"
             style="@style/testButton"
