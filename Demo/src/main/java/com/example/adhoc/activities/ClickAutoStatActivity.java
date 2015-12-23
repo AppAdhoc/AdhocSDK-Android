@@ -20,7 +20,7 @@ import com.example.adhoc.abtestdemo.R;
 
 import java.util.Random;
 
-
+// deprecated
 public class ClickAutoStatActivity extends ActionBarActivity {
 
 
