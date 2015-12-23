@@ -10,7 +10,7 @@ public class DemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        AdhocTracker.initalize(this.getApplicationContext());
+        AdhocTracker.init(this.getApplicationContext());
         HashMap<String,String> map = new HashMap<>();
         map.put("key","value");
         AdhocTracker.setCustomStatParameter(this.getApplicationContext(),map);
