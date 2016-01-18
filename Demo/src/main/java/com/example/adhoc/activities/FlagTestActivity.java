@@ -59,7 +59,7 @@ public class FlagTestActivity extends AdhocActivity {
             boolean flag = flags.getBooleanFlag("module01", false);
             // 根据获取模块的值，开发不同的业务逻辑
             if (flag) {
-                Toast.makeText(FlagTestActivity.this, "has net flags is true", Toast.LENGTH_LONG).show();
+//                Toast.makeText(FlagTestActivity.this, "has net flags is true", Toast.LENGTH_LONG).show();
                 btn01.setBackgroundColor(getResources().getColor(android.R.color.black));
                 btn01.setTextColor(getResources().getColor(android.R.color.white));
                 btn01.setTextSize(getResources().getDimension(R.dimen.textsize_small));
@@ -76,20 +76,5 @@ public class FlagTestActivity extends AdhocActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 }

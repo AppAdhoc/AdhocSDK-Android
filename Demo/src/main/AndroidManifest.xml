@@ -36,10 +36,6 @@
         </activity>
         // deprecated
         <activity
-            android:name="com.example.adhoc.activities.ClickAutoStatActivity"
-            android:label="@string/title_activity_auto_tracking" >
-        </activity>
-        <activity
             android:name="com.example.adhoc.activities.BtnColorActivity" >
         </activity>
         <activity

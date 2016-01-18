@@ -28,6 +28,7 @@ public class ClickAutoStatActivity extends ActionBarActivity {
     Button button2;
 
     Random random = new Random();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +42,16 @@ public class ClickAutoStatActivity extends ActionBarActivity {
 
                 AdhocTracker.incrementStat(ClickAutoStatActivity.this, "click01", 1);
                 // 页面中随意添加view
-                if(Math.abs(random.nextInt(100))%2==0){
+                if (Math.abs(random.nextInt(100)) % 2 == 0) {
 
                     addButton();
-                }else{
+                } else {
                     addTextView();
                 }
             }
         });
     }
+
     // 添加button
     private void addButton() {
 
@@ -58,7 +60,7 @@ public class ClickAutoStatActivity extends ActionBarActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams
                 (LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.weight = 1;
-        Animation animation = AnimationUtils.loadAnimation(this,android.R.anim.fade_in);
+        Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         LayoutAnimationController lac = new LayoutAnimationController(animation);
         container.setLayoutAnimation(lac);
         container.addView(newBtn, params);
@@ -66,7 +68,7 @@ public class ClickAutoStatActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 // 页面中的view的点击将自动统计到ADHOC后台
-                Toast.makeText(ClickAutoStatActivity.this, "点击自动统计key:" + newBtn.getText(),Toast.LENGTH_LONG).show();
+                Toast.makeText(ClickAutoStatActivity.this, "点击自动统计key:" + newBtn.getText(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -80,14 +82,14 @@ public class ClickAutoStatActivity extends ActionBarActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams
                 (LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.weight = 1;
-        Animation animation = AnimationUtils.loadAnimation(this,android.R.anim.fade_in);
+        Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         LayoutAnimationController lac = new LayoutAnimationController(animation);
         container.setLayoutAnimation(lac);
         container.addView(newTextView, params);
         newTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ClickAutoStatActivity.this, "点击自动统计key:" + newTextView.getText(),Toast.LENGTH_LONG).show();
+                Toast.makeText(ClickAutoStatActivity.this, "点击自动统计key:" + newTextView.getText(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -102,7 +104,7 @@ public class ClickAutoStatActivity extends ActionBarActivity {
         if (view instanceof Button) {
             layout = new LinearLayout(this);
         } else {
-            if (((ViewGroup)view).getChildCount() >= 3) {
+            if (((ViewGroup) view).getChildCount() >= 3) {
                 layout = new LinearLayout(this);
             } else {
                 return (LinearLayout) view;
@@ -130,6 +132,7 @@ public class ClickAutoStatActivity extends ActionBarActivity {
         button.setText("BUTTON" + id);
         return button;
     }
+
     // 新建一个TextView
     private TextView getNewTextView() {
 
@@ -158,27 +161,5 @@ public class ClickAutoStatActivity extends ActionBarActivity {
         return id;
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_auto_tracking, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        AdhocTracker.autoTracking(ClickAutoStatActivity.this,event);
-        return super.dispatchTouchEvent(event);
-    }
 }
+

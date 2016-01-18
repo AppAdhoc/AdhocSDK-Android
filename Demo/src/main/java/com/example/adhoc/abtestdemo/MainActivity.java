@@ -11,7 +11,6 @@ import com.adhoc.adhocsdk.AdhocTracker;
 import com.adhoc.adhocsdk.ExperimentFlags;
 import com.example.adhoc.activities.BottomTestActivity;
 import com.example.adhoc.activities.BtnColorActivity;
-import com.example.adhoc.activities.ClickAutoStatActivity;
 import com.example.adhoc.activities.FlagTestActivity;
 import com.example.adhoc.activities.LoginTestActivity;
 import com.example.adhoc.activities.PageOrderGoodsDisplayActivity;
@@ -122,24 +121,6 @@ public class MainActivity extends AdhocActivity{
         flags = AdhocTracker.getExperimentFlags(MainActivity.this);
         super.onStart();
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 
 
 }
