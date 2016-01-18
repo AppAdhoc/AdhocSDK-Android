@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.adhoc.abtestdemo"
-        minSdkVersion 18
+        minSdkVersion 10
         targetSdkVersion 21
         versionCode 1
         versionName "2.0.3"
@@ -26,6 +26,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
-    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.0'
+//    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.0'
     compile files('libs/adhoc-v2.0.3-all.jar')
 }

@@ -1,7 +1,6 @@
 package com.example.adhoc.base;
 
 import android.support.v7.app.ActionBarActivity;
-import android.view.MotionEvent;
 
 import com.adhoc.adhocsdk.AdhocTracker;
 

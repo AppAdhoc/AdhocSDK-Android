@@ -34,6 +34,7 @@
             android:name="com.example.adhoc.base.AdhocActivity"
             android:label="@string/title_activity_base" >
         </activity>
+        // deprecated
         <activity
             android:name="com.example.adhoc.activities.BtnColorActivity" >
         </activity>
