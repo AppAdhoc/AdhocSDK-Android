@@ -8,7 +8,6 @@ public class DemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        AdhocTracker.initalize(this.getApplicationContext());
-        AdhocTracker.setEnableDebugMode(true);
+        AdhocTracker.init(this,"ADHOC_50000000000000ad80c23462");
     }
 }
