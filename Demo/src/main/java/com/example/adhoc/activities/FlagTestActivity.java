@@ -47,8 +47,8 @@ public class FlagTestActivity extends AdhocActivity {
         super.onStart();
         AdhocTracker.getExperimentFlags(FlagTestActivity.this, new OnAdHocReceivedData() {
             @Override
-            public void onReceivedData(JSONObject jsonObject) {
-                tv01.setText(tv01.getText()+ " " + jsonObject.toString());
+            public void onReceivedData(ExperimentFlags jsonObject) {
+                tv01.setText(tv01.getText() + " " + jsonObject.getRawFlags());
 
             }
         });
