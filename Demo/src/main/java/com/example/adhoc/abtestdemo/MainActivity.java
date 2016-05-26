@@ -2,6 +2,7 @@ package com.example.adhoc.abtestdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,15 +19,18 @@ import com.example.adhoc.activities.PageOrderloginActivity;
 import com.example.adhoc.activities.TestListActivity;
 import com.example.adhoc.base.AdhocActivity;
 
-public class MainActivity extends AdhocActivity{
+public class MainActivity extends AdhocActivity {
 
     Button pageOrder = null;
     ExperimentFlags flags = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 查看当前设备进入试验情况
+        Log.i("adhoc_sdk", AdhocTracker.getCurrentExperiments().toString());
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,21 +92,21 @@ public class MainActivity extends AdhocActivity{
             @Override
             public void onClick(View v) {
                 int defaultValue = 0;
-                int order = flags.getIntegerFlag("page_order0",defaultValue);
+                int order = flags.getIntegerFlag("page_order0", defaultValue);
                 Intent intent = new Intent();
-                intent.putExtra("order",order);
-                switch (order){
-                    case 0 :
+                intent.putExtra("order", order);
+                switch (order) {
+                    case 0:
                         // (第一步)登陆--商品--支付--交易成功
-                        intent.setClass(MainActivity.this,PageOrderloginActivity.class);
+                        intent.setClass(MainActivity.this, PageOrderloginActivity.class);
                         break;
-                    case 1 :
+                    case 1:
                         // (第一步)商品展示--登陆--支付--交易成功
-                        intent.setClass(MainActivity.this,PageOrderGoodsDisplayActivity.class);
+                        intent.setClass(MainActivity.this, PageOrderGoodsDisplayActivity.class);
                         break;
-                    case 2 :
+                    case 2:
                         // （第一步）商品展示--支付--登陆--交易成功
-                        intent.setClass(MainActivity.this,PageOrderGoodsDisplayActivity.class);
+                        intent.setClass(MainActivity.this, PageOrderGoodsDisplayActivity.class);
                         break;
                     default:
                         break;
