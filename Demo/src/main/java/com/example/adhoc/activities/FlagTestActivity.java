@@ -1,8 +1,6 @@
 package com.example.adhoc.activities;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,11 +9,8 @@ import android.widget.Toast;
 import com.adhoc.adhocsdk.AdhocTracker;
 import com.adhoc.adhocsdk.ExperimentFlags;
 import com.adhoc.adhocsdk.OnAdHocReceivedData;
-import com.example.adhoc.abtestdemo.MainActivity;
 import com.example.adhoc.abtestdemo.R;
 import com.example.adhoc.base.AdhocActivity;
-
-import org.json.JSONObject;
 
 
 public class FlagTestActivity extends AdhocActivity {
@@ -35,7 +30,7 @@ public class FlagTestActivity extends AdhocActivity {
             @Override
             public void onClick(View v) {
                 // 统计key：‘payment’ value：100. "Payment" 为ADHOC 网站后台定义。
-                AdhocTracker.incrementStat(FlagTestActivity.this, "revenue", 100);
+                AdhocTracker.track( "revenue", 100);
 
                 Toast.makeText(FlagTestActivity.this, "上报统计信息到ADHOC后台", Toast.LENGTH_LONG).show();
             }
@@ -45,7 +40,7 @@ public class FlagTestActivity extends AdhocActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        AdhocTracker.getExperimentFlags(FlagTestActivity.this, new OnAdHocReceivedData() {
+        AdhocTracker.asyncGetFlag(new OnAdHocReceivedData() {
             @Override
             public void onReceivedData(ExperimentFlags jsonObject) {
                 tv01.setText(tv01.getText() + " " + jsonObject.getRawFlags());
@@ -53,10 +48,8 @@ public class FlagTestActivity extends AdhocActivity {
             }
         });
         // 获取模块开关
-        ExperimentFlags flags = AdhocTracker.getExperimentFlags(FlagTestActivity.this);
-        if (flags != null) {
             // 'model01' 对应网站添加的产品模块名称
-            boolean flag = flags.getBooleanFlag("module01", false);
+            boolean flag = AdhocTracker.getFlag("module01", false);
             // 根据获取模块的值，开发不同的业务逻辑
             if (flag) {
 //                Toast.makeText(FlagTestActivity.this, "has net flags is true", Toast.LENGTH_LONG).show();
@@ -73,7 +66,7 @@ public class FlagTestActivity extends AdhocActivity {
                 btn01.setText("实验版本A");
                 tv_tracking.setVisibility(View.GONE);
             }
-        }
+
     }
 
 
