@@ -3,13 +3,10 @@ package com.example.adhoc.abtestdemo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.adhoc.adhocsdk.AdhocTracker;
-import com.adhoc.adhocsdk.ExperimentFlags;
 import com.example.adhoc.activities.BottomTestActivity;
 import com.example.adhoc.activities.BtnColorActivity;
 import com.example.adhoc.activities.FlagTestActivity;
@@ -22,7 +19,6 @@ import com.example.adhoc.base.AdhocActivity;
 public class MainActivity extends AdhocActivity {
 
     Button pageOrder = null;
-    ExperimentFlags flags = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +88,7 @@ public class MainActivity extends AdhocActivity {
             @Override
             public void onClick(View v) {
                 int defaultValue = 0;
-                int order = flags.getIntegerFlag("page_order0", defaultValue);
+                int order = AdhocTracker.getFlag("page_order0", defaultValue);
                 Intent intent = new Intent();
                 intent.putExtra("order", order);
                 switch (order) {
@@ -122,8 +118,13 @@ public class MainActivity extends AdhocActivity {
 
     @Override
     protected void onStart() {
-        flags = AdhocTracker.getExperimentFlags(MainActivity.this);
         super.onStart();
+
+        if (AdhocTracker.getFlag("isHomePage",false)){
+            //do something
+        }else {
+            //do something
+        }
     }
 
 

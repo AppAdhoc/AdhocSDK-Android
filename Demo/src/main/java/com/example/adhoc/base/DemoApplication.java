@@ -3,16 +3,21 @@ package com.example.adhoc.base;
 import android.app.Application;
 
 import com.adhoc.adhocsdk.AdhocTracker;
-
-import java.util.HashMap;
+import com.adhoc.config.AdhocConfig;
 
 public class DemoApplication extends Application {
+
+    private static final String ADHOC_KEY = "ADHOC_50000000000000ad80c23462";
+
     @Override
     public void onCreate() {
         super.onCreate();
-        AdhocTracker.init(this, "ADHOC_50000000000000ad80c23462");
-        HashMap<String, String> map = new HashMap<>();
-        map.put("key", "value");
-        AdhocTracker.setCustomStatParameter(this.getApplicationContext(), map);
+        AdhocConfig adhocConfig = new AdhocConfig.Builder()
+                .appKey(ADHOC_KEY)
+                .context(this)
+                .addCustom("key","value")
+                .build();
+
+        AdhocTracker.init(adhocConfig);
     }
 }

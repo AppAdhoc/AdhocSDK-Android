@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.adhoc.adhocsdk.AdhocTracker;
-import com.adhoc.adhocsdk.ExperimentFlags;
 import com.example.adhoc.abtestdemo.R;
 import com.example.adhoc.base.AdhocActivity;
 import com.example.adhoc.quote.AdapterB;
@@ -51,13 +50,13 @@ public class TestListActivity extends AdhocActivity {
             @Override
             public void onItemClick(PLA_AdapterView<?> parent, View view, int position, long id) {
 
-                AdhocTracker.incrementStat(TestListActivity.this, "goods_item_click", 1);
+                AdhocTracker.track("goods_item_click", 1);
             }
         });
         listb.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AdhocTracker.incrementStat(TestListActivity.this,"goods_item_click",1);
+                AdhocTracker.track("goods_item_click",1);
             }
         });
 
@@ -68,9 +67,8 @@ public class TestListActivity extends AdhocActivity {
     protected void onStart() {
         super.onStart();
         // 获取模块开关
-        ExperimentFlags flags = AdhocTracker.getExperimentFlags(TestListActivity.this);
         // 'list_test' 对应网站添加的产品模块名称
-        boolean defaultFlag = flags.getBooleanFlag("test_diff_list",false);
+        boolean defaultFlag = AdhocTracker.getFlag("test_diff_list",false);
         // 根据获取模块的值，开发不同的业务逻辑
         if(defaultFlag){
             lista.setAdapter(aAdapter);

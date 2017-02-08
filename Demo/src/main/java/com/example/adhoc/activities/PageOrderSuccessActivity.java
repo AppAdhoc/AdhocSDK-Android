@@ -1,8 +1,6 @@
 package com.example.adhoc.activities;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.adhoc.adhocsdk.AdhocTracker;
 import com.example.adhoc.abtestdemo.R;
@@ -17,7 +15,7 @@ public class PageOrderSuccessActivity extends AdhocActivity {
         setContentView(R.layout.pageorder_success);
         order = getIntent().getIntExtra("order",0);
         findViewById(R.id.tv_compelete);
-        AdhocTracker.incrementStat(PageOrderSuccessActivity.this,"buy_success",1);
+        AdhocTracker.track("buy_success",1);
     }
 
     @Override

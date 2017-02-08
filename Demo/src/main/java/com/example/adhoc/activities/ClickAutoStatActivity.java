@@ -2,9 +2,6 @@ package com.example.adhoc.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -40,7 +37,7 @@ public class ClickAutoStatActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                AdhocTracker.incrementStat(ClickAutoStatActivity.this, "click01", 1);
+                AdhocTracker.track( "click01", 1);
                 // 页面中随意添加view
                 if (Math.abs(random.nextInt(100)) % 2 == 0) {
 
