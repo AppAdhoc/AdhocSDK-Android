@@ -1,8 +1,8 @@
 ## Android SDK 集成文档
 
-[ChangeLog](./changelog.md)
+[ABTest官网](http://www.appadhoc.com/)
 
-[Android SDK API 参考](./JavaDoc/index.html)
+[ChangeLog](./changelog.md)
 
 [可视化模式](http://doc.appadhoc.com/mobileexp/Visual.html)
 
@@ -12,7 +12,7 @@
 
 更新时间：2017/2/8
 
-[adhoc-min.jar&nbsp;&nbsp;2.3.2](./Demo/libs/adhoc-v2.3.2-min.jar)
+[adhoc-min.jar&nbsp;&nbsp;2.3.2](https://www.appadhoc.com/downloads/android/adhoc-v2.3.2-min.jar)
 
 ### 导入SDK
 
@@ -188,7 +188,3 @@ AdhocConfig adhocConfig = new AdhocConfig.Builder()
 
 AdhocTracker.init(adhocConfig);
 ```
-
-API 参考
-
-[android SDK API 参考](./JavaDoc/index.html)
