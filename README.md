@@ -1,20 +1,18 @@
 ## Android SDK 集成文档
 
-[查看DEMO](https://github.com/AppAdhoc/android-abtestdemo)
-
 [ChangeLog](./changelog.md)
 
-[Android SDK API 参考](http://www.appadhoc.com/android/reference/)
+[Android SDK API 参考](./JavaDoc/index.html)
 
-[可视化实验](http://doc.appadhoc.com/mobileexp/Visual.html)
+[可视化模式](http://doc.appadhoc.com/mobileexp/Visual.html)
 
-[APP编程模式](http://doc.appadhoc.com/mobileexp/coding.html)
+[编程模式](http://doc.appadhoc.com/mobileexp/coding.html)
 
 <h3 id="sdk"> 下载SDK </h3>
 
 更新时间：2017/2/8
 
-[adhoc-min.jar&nbsp;&nbsp;2.3.2](https://www.appadhoc.com/downloads/android/adhoc-v2.3.2-min.jar)
+[adhoc-min.jar&nbsp;&nbsp;2.3.2](./Demo/libs/adhoc-v2.3.2-min.jar)
 
 ### 导入SDK
 
@@ -147,7 +145,7 @@ AdhocTracker.track("clickTimes", 1);
 
 <h3 id="debug"> 集成调试 </h3>
 
-集成调试只是为验证SDK的集成是否成功（并不是真正开始试验！），详见[移动调试工具](./testTools.md)。
+集成调试只是为验证SDK的集成是否成功（并不是真正开始试验！），详见[移动调试工具](http://doc.appadhoc.com/sdk/testTools.html)。
 
 ### 开始试验
 
@@ -193,4 +191,4 @@ AdhocTracker.init(adhocConfig);
 
 API 参考
 
-[android SDK API 参考](http://www.appadhoc.com/android/reference/)
+[android SDK API 参考](./JavaDoc/index.html)
