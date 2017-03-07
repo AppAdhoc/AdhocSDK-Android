@@ -2,13 +2,13 @@
 
 [ABTest官网](http://www.appadhoc.com/)
 
-[Android API](http://appadhoc.github.io/AdhocSDK-Android/)
-
-[ChangeLog](./changelog.md)
+[Android SDK API](http://appadhoc.github.io/AdhocSDK-Android/2.3.2/)
 
 [可视化模式](http://doc.appadhoc.com/mobileexp/Visual.html)
 
 [编程模式](http://doc.appadhoc.com/mobileexp/coding.html)
+
+[ChangeLog](./changelog.md)
 
 <h3 id="sdk"> 下载SDK </h3>
 
