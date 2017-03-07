@@ -2,7 +2,7 @@
 
 [ABTest官网](http://www.appadhoc.com/)
 
-[Android API](.)
+[Android API](http://appadhoc.github.io/AdhocSDK-Android/)
 
 [ChangeLog](./changelog.md)
 
