@@ -14,7 +14,7 @@
 
 更新时间：2017/2/8
 
-[adhoc-min.jar&nbsp;&nbsp;2.3.2](https://github.com/AppAdhoc/AdhocSDK-android/raw/master/adhoc-v2.3.2-min.jar)
+[adhoc-min.jar&nbsp;&nbsp;2.3.2](./raw/master/adhoc-v2.3.2-min.jar)
 
 ### 导入SDK
 
