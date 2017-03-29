@@ -131,30 +131,6 @@ if (AdhocTracker.getFlag("isNewHomePage", false)) {
 AdhocTracker.track("clickTimes", 1);
 ```
 
-<!--### 启用预定义指标-->
-
-<!--AppAdhoc提供3个预定义指标：访问时长、会话数、崩溃数，只需要在init时添加对应配置，即可获取统计数据。-->
-
-<!--<p style="color:#aaa">注意：指标值应由PM或相关AB Test需求制定人员在后台选择添加：</p>-->
-
-<!--![pre_tracker](./picture/stats3.png)-->
-
-<!--在init方法中加入以下配置项：-->
-<!--```-->
-<!--AdhocConfig adhocConfig = new AdhocConfig.Builder()-->
-        <!--.context(this)-->
-        <!--.appKey(key)-->
-        <!--//调用后,会自动上报崩溃次数统计-->
-        <!--.reportCrash()-->
-        <!--//调用后,会自动统计App的session时长-->
-        <!--.reportDuration()-->
-        <!--//调用后自动统计session-->
-        <!--.reportSession()-->
-        <!--.build();-->
-
-<!--AdhocTracker.init(adhocConfig);-->
-<!--```-->
-
 ### 混淆相关
 
 在proguard-rules.txt文件中加入：
