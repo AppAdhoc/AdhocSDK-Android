@@ -12,9 +12,9 @@
 
 <h3 id="sdk"> 下载SDK </h3>
 
-更新时间：2017/3/23
+更新时间：2017/2/8
 
-[adhoc-min.jar&nbsp;&nbsp;2.3.2](./jar/adhoc-v2.3.6-min.jar)
+[adhoc-min.jar&nbsp;&nbsp;2.3.2](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/adhoc-v2.3.2-min.jar)
 
 ### 导入SDK
 
@@ -131,29 +131,29 @@ if (AdhocTracker.getFlag("isNewHomePage", false)) {
 AdhocTracker.track("clickTimes", 1);
 ```
 
-### 启用预定义指标
+<!--### 启用预定义指标-->
 
-AppAdhoc提供3个预定义指标：访问时长、会话数、崩溃数，只需要在init时添加对应配置，即可获取统计数据。
+<!--AppAdhoc提供3个预定义指标：访问时长、会话数、崩溃数，只需要在init时添加对应配置，即可获取统计数据。-->
 
-<p style="color:#aaa">注意：指标值应由PM或相关AB Test需求制定人员在后台选择添加：</p>
+<!--<p style="color:#aaa">注意：指标值应由PM或相关AB Test需求制定人员在后台选择添加：</p>-->
 
-![pre_tracker](./picture/stats3.png)
+<!--![pre_tracker](./picture/stats3.png)-->
 
-在init方法中加入以下配置项：
-```
-AdhocConfig adhocConfig = new AdhocConfig.Builder()
-        .context(this)
-        .appKey(key)
-        //调用后,会自动上报崩溃次数统计
-        .reportCrash()
-        //调用后,会自动统计App的session时长
-        .reportDuration()
-        //调用后自动统计session
-        .reportSession()
-        .build();
+<!--在init方法中加入以下配置项：-->
+<!--```-->
+<!--AdhocConfig adhocConfig = new AdhocConfig.Builder()-->
+        <!--.context(this)-->
+        <!--.appKey(key)-->
+        <!--//调用后,会自动上报崩溃次数统计-->
+        <!--.reportCrash()-->
+        <!--//调用后,会自动统计App的session时长-->
+        <!--.reportDuration()-->
+        <!--//调用后自动统计session-->
+        <!--.reportSession()-->
+        <!--.build();-->
 
-AdhocTracker.init(adhocConfig);
-```
+<!--AdhocTracker.init(adhocConfig);-->
+<!--```-->
 
 ### 混淆相关
 

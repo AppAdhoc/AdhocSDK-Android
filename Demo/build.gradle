@@ -26,5 +26,5 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile files('libs/adhoc-v2.3.6-min.jar')
+    compile files('libs/adhoc-v2.3.2-min.jar')
 }
