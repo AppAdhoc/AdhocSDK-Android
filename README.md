@@ -137,7 +137,7 @@ AppAdhoc提供3个预定义指标：访问时长、会话数、崩溃数，只�
 
 <p style="color:#aaa">注意：指标值应由PM或相关AB Test需求制定人员在后台选择添加：</p>
 
-![预定义指标](./picture/stats3.png)
+![预定义指标](./picture/stats3.jpeg)
 
 在init方法中加入以下配置项：
 ```
