@@ -1,15 +1,14 @@
 ## Android SDK 集成文档
 
-[查看DEMO](https://github.com/AppAdhoc/android-abtestdemo)
 
-[ChangeLog](https://github.com/AppAdhoc/AdhocSDK-Android/blob/master/changelog.md)
+[ChangeLog](https://github.com/AppAdhoc/AdhocSDK-Android/blob/master/changelog.md)  
 [Android SDK API 参考](http://www.appadhoc.com/android/reference/)
 
 <h3 id="sdk"> 下载SDK </h3>
 
 更新时间：2017/8/18
 
-[adhoc-min.jar&nbsp;&nbsp;3.1.0](https://www.appadhoc.com/downloads/android/adhoc-v3.1.0-min.jar)
+[adhoc-all.jar&nbsp;&nbsp;3.1.0](https://www.appadhoc.com/downloads/android/adhoc-v3.1.0-all.jar)
 
 ### 导入SDK
 
