@@ -7,7 +7,7 @@ import com.adhoc.config.AdhocConfig;
 
 public class DemoApplication extends Application {
 
-    private static final String ADHOC_KEY = "ADHOC_50000000000000ad80c23462";
+    private static final String ADHOC_KEY = "XXX";//xxx替换为adhoc的appkey
 
     @Override
     public void onCreate() {
