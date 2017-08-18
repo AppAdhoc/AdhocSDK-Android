@@ -1,26 +1,21 @@
 ## Android SDK 集成文档
 
-[ABTest官网](http://www.appadhoc.com/)
+[查看DEMO](https://github.com/AppAdhoc/android-abtestdemo)
 
-[Android SDK API](http://appadhoc.github.io/AdhocSDK-Android/2.3.2/)
-
-[可视化模式](http://doc.appadhoc.com/mobileexp/Visual.html)
-
-[编程模式](http://doc.appadhoc.com/mobileexp/coding.html)
-
-[ChangeLog](./changelog.md)
+[ChangeLog](https://github.com/AppAdhoc/AdhocSDK-Android/blob/master/changelog.md)
+[Android SDK API 参考](http://www.appadhoc.com/android/reference/)
 
 <h3 id="sdk"> 下载SDK </h3>
 
-更新时间：2017/3/23
+更新时间：2017/8/18
 
-[adhoc-min.jar&nbsp;&nbsp;2.3.6](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/adhoc-v2.3.6-min.jar)
+[adhoc-min.jar&nbsp;&nbsp;3.1.0](https://www.appadhoc.com/downloads/android/adhoc-v3.1.0-min.jar)
 
 ### 导入SDK
 
 将下载得到的 SDK JAR拖入到的AndroidStudio / Eclipse 工程根目录libs中(没有则新建)，右键Add as Library添加到库：（示意图，实际包名以最新版本为准）
 
-![导入SDK](./picture/android1.png)
+![导入SDK](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/android1.png)
 
 ### 加入网络和SDCARD读写权限
 
@@ -49,7 +44,7 @@ AdhocTracker.init(adhocConfig);
 
 需要在AndroidManifest.xml 里指定类名：
 
-![SDK初始化](./picture/android2.png)
+![SDK初始化](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/android2.png)
 
 如果已经创建过Application类，跳过新建步骤，直接在onCreate加入上述代码即可。
 
@@ -57,7 +52,7 @@ AdhocTracker.init(adhocConfig);
 
 <p style="color:#aaa">注意：试验“应用”此时应该提前创建完毕。可在AppAdhoc控制台应用列表找到，如下图红线部分：</p>
 
-![your_app_key](./picture/appkey.png)
+![your_app_key](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/appkey.png)
 
 <p style="color:#a00">请勿在SDK基础上进行自行封装，以免影响到试验逻辑，造成试验无法正常运行。如果确有自行封装的需求，请与客户经理联系，获取注意事项。</p>
 
@@ -94,7 +89,8 @@ AdhocTracker.init(adhocConfig);
 试验变量的值决定了展示的内容或程序的逻辑。试验变量在编程模式试验中创建，可视化试验无需此步骤。  
 <p style="color:#aaa">注意：试验变量值应由PM或相关A/B Testing需求制定人员在后台提前录入完毕，如下图“版本管理”红线部分：</p>
 
-![your_app_key](./picture/flag.png)
+
+![your_app_key](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/flag.png)
 
 在调用SDK之前，记得引用头文件：
 
@@ -123,7 +119,7 @@ if (AdhocTracker.getFlag("isNewHomePage", false)) {
 
 <p style="color:#aaa">注意：指标值应由PM或相关AB Test需求制定人员在后台提前录入完毕，如下图“优化指标”红线部分：</p>
 
-![优化指标](./picture/stat.png)
+![优化指标](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/stat.png)
 
 比如在进入某一逻辑分支后，可以统计点击次数。将上图中的指标“clickTimes”传入函数track实现上报指标, 每次累加1：
 
@@ -137,7 +133,7 @@ AppAdhoc提供3个预定义指标：访问时长、会话数、崩溃数，只�
 
 <p style="color:#aaa">注意：指标值应由PM或相关AB Test需求制定人员在后台选择添加：</p>
 
-![预定义指标](./picture/stats3.jpeg)
+![](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/stats3.png)
 
 在init方法中加入以下配置项：
 ```
@@ -171,7 +167,7 @@ AdhocTracker.init(adhocConfig);
 
 <h3 id="debug"> 集成调试 </h3>
 
-集成调试只是为验证SDK的集成是否成功（并不是真正开始试验！），详见[移动调试工具](http://doc.appadhoc.com/sdk/testTools.html)。
+集成调试只是为验证SDK的集成是否成功（并不是真正开始试验！），详见[移动调试工具](./testTools.md)。
 
 ### 开始试验
 
@@ -188,15 +184,15 @@ AppAdhoc Web SDK 会自动把浏览器名称、版本、语言等用户标签自
 
 在运行控制/右侧定向试验：
 
-![受众定向](./picture/button.png)
+![受众定向](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/button.png)
 
 选择分组，点击编辑用户群：
 
-![受众定向](./picture/dialog.png)
+![受众定向](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/dialog.png)
 
 即得到受众条件的key，在下图例子中，“sex”是key：
 
-![受众定向](./picture/setting1.png)
+![受众定向](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/setting1.png)
 
 在AdhocTracker.init()方法中进行设置：
 
@@ -214,3 +210,7 @@ AdhocConfig adhocConfig = new AdhocConfig.Builder()
 
 AdhocTracker.init(adhocConfig);
 ```
+
+API 参考
+
+[android SDK API 参考](http://www.appadhoc.com/android/reference/)
