@@ -6,9 +6,9 @@
 
 <h3 id="sdk"> 下载SDK </h3>
 
-更新时间：2017/8/18
+更新时间：2017/9/13
 
-[adhoc-all.jar&nbsp;&nbsp;3.1.0](https://www.appadhoc.com/downloads/android/adhoc-v3.1.0-all.jar)
+[adhoc-all.jar&nbsp;&nbsp;3.1.1](https://www.appadhoc.com/downloads/android/adhoc-v3.1.1-all.jar)
 
 ### 导入SDK
 
