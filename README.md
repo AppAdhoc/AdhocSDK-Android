@@ -8,7 +8,7 @@
 
 更新时间：2017/9/13
 
-[adhoc-all.jar&nbsp;&nbsp;3.1.1](https://www.appadhoc.com/downloads/android/adhoc-v3.1.1-all.jar)
+[adhoc-all.jar&nbsp;&nbsp;3.1.2](https://www.appadhoc.com/downloads/android/adhoc-v3.1.2-all.jar)
 
 ### 导入SDK
 
