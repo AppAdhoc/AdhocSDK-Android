@@ -6,9 +6,9 @@
 
 <h3 id="sdk"> 下载SDK </h3>
 
-更新时间：2017/9/13
+更新时间：2017/10/11
 
-[adhoc-all.jar&nbsp;&nbsp;3.1.2](https://www.appadhoc.com/downloads/android/adhoc-v3.1.2-all.jar)
+[adhoc-all.jar&nbsp;&nbsp;3.1.3](https://www.appadhoc.com/downloads/android/adhoc-v3.1.3-all.jar)
 
 ### 导入SDK
 
@@ -156,12 +156,6 @@ AdhocTracker.init(adhocConfig);
 
 ```
 -keep class com.adhoc.** {*;}
-```
-
-对于 SDK 2.0.5 及之后版本还需加入如下代码：
-
-```
--keep class android.support.v4.**{*;}
 ```
 
 <h3 id="debug"> 集成调试 </h3>
