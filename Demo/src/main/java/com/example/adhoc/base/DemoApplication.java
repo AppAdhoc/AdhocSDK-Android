@@ -15,7 +15,6 @@ public class DemoApplication extends Application {
         AdhocConfig adhocConfig = new AdhocConfig.Builder()
                 .appKey(ADHOC_KEY)
                 .context(this)
-                .addCustom("key","value")
                 .build();
 
         AdhocTracker.init(adhocConfig);
