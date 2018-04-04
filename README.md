@@ -4,26 +4,34 @@
 [ChangeLog](https://github.com/AppAdhoc/AdhocSDK-Android/blob/master/changelog.md)  
 [Android SDK API 参考](http://www.appadhoc.com/android/reference/)
 
-<h3 id="sdk"> 下载SDK </h3>
 
-更新时间：2018/1/24
+### 集成SDK  
 
-[adhoc-all.jar&nbsp;&nbsp;3.3.0](https://www.appadhoc.com/downloads/android/adhoc-v3.3.0-all.jar)
+通过在工程build.gradle配置脚本中添加maven线上依赖，导入最新版本SDK。 在Gradle依赖中添加：
 
-### 导入SDK
+``
+dependencies {    
+    compile 'com.appadhoc:abtest:3.4.2'    
+}
+``
 
-将下载得到的 SDK JAR拖入到的AndroidStudio / Eclipse 工程根目录libs中(没有则新建)，右键Add as Library添加到库：（示意图，实际包名以最新版本为准）
+如果无法正常集成请添加如下配置：
 
-![导入SDK](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/android1.png)
+``
+allprojects {  
+    repositories {
+            jcenter()     
+    }
+}
+``
 
-### 加入网络和SDCARD读写权限
+### 加入网络权限
 
 在项目中找到项目配置文件 AndroidManifest.xml，加入网络访问权限和SDCARD读写权限：
 
 ```
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 
 <h3 id="init"> SDK初始化 </h3>
@@ -156,11 +164,9 @@ AdhocTracker.init(adhocConfig);
 
 ```
 -keep class com.adhoc.** {*;}
+-keep class android.support.v4.view.ViewPager{*;}
+-keep class android.support.v7.widget.RecyclerView{*;}
 ```
-
-<h3 id="debug"> 集成调试 </h3>
-
-集成调试只是为验证SDK的集成是否成功（并不是真正开始试验！），详见[移动调试工具](./testTools.md)。
 
 ### 开始试验
 

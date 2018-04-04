@@ -15,6 +15,7 @@ public class DemoApplication extends Application {
         AdhocConfig adhocConfig = new AdhocConfig.Builder()
                 .appKey(ADHOC_KEY)
                 .context(this)
+                .enableDebugAssist(true)
                 .build();
 
         AdhocTracker.init(adhocConfig);
