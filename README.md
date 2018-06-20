@@ -9,21 +9,21 @@
 
 通过在工程build.gradle配置脚本中添加maven线上依赖，导入最新版本SDK。 在Gradle依赖中添加：
 
-``
+```
 dependencies {    
-    compile 'com.appadhoc:abtest:3.4.4'    
+    compile 'com.appadhoc:abtest:3.5.0'    
 }
-``
+```
 
 如果无法正常集成请添加如下配置：
 
-``
+```
 allprojects {  
     repositories {
             jcenter()     
     }
 }
-``
+```
 
 ### 加入网络权限
 
