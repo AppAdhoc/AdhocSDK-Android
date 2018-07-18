@@ -11,7 +11,7 @@
 
 ```
 dependencies {    
-    compile 'com.appadhoc:abtest:3.5.1'
+    compile 'com.appadhoc:abtest:3.5.2'
 }
 ```
 
