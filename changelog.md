@@ -1,3 +1,15 @@
+### Version 3.6.0
+
+更新日期： 2018年8月16日
+
+更新内容:
+
+* 增加fastGetFlag接口
+* 增加setClientId接口
+* 增加setUserAttribute接口
+
+
+---
 ### Version 3.5.4.1
 
 更新日期： 2018年8月8日
