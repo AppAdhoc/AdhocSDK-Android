@@ -11,7 +11,7 @@
 
 ```
 dependencies {    
-    compile 'com.appadhoc:abtest:4.2.1'
+    compile 'com.appadhoc:abtest:5.0.0'
      //   lite版
     //    compile 'com.appadhoc:abtest-lite:4.2.1'
 }
