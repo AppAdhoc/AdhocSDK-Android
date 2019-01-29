@@ -1,3 +1,12 @@
+### Version 5.0.1
+
+更新日期： 2018年1月29日
+
+更新内容:
+* 修复supportMultiProcess配置bug
+
+---
+
 ### Version 5.0.0
 
 更新日期： 2018年1月8日
