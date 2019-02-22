@@ -25,8 +25,9 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.appadhoc:abtest:5.0.1'
+    compile 'com.appadhoc:abtest:5.0.2'
     //lite版
-//    compile 'com.appadhoc:abtest-lite:4.1.0'
+//    compile 'com.appadhoc:abtest-lite:5.0.2'
 }

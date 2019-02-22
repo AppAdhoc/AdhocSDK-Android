@@ -11,9 +11,9 @@
 
 ```
 dependencies {    
-    compile 'com.appadhoc:abtest:5.0.1'
+    compile 'com.appadhoc:abtest:5.0.2'
      //   lite版
-    //    compile 'com.appadhoc:abtest-lite:5.0.1'
+    //    compile 'com.appadhoc:abtest-lite:5.0.2'
 }
 ```
 
@@ -80,14 +80,10 @@ AdhocConfig adhocConfig = new AdhocConfig.Builder()
         .addCustom("name", "20")
         //调用后,会自动上报崩溃次数统计
         .reportCrash()
+	// 多进程数据安全
+	.supportMultiProcess
         //调用后,优化指标只有在wifi网络下才会上报数据(可能会造成官网数据延时显示)
         .reportWifi()
-        //调用后,会自动统计App的session时长
-        .reportDuration()
-        //调用后自动统计session
-        .reportSession()
-        //设置session最大间隔时间为10分钟(单位:毫秒)
-        .intervalSessionDuration(60 * 1000)
         .build();
 
 AdhocTracker.init(adhocConfig);
