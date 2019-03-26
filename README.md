@@ -11,9 +11,9 @@
 
 ```
 dependencies {    
-    compile 'com.appadhoc:abtest:5.0.2'
+    compile 'com.appadhoc:abtest:5.0.4'
      //   lite版
-    //    compile 'com.appadhoc:abtest-lite:5.0.2'
+    //    compile 'com.appadhoc:abtest-lite:5.0.4'
 }
 ```
 
@@ -163,7 +163,10 @@ AdhocTracker.init(adhocConfig);
 ```
 -keep class com.adhoc.** {*;}
 -keep class android.support.v4.view.ViewPager{*;}
+-keep class android.support.v4.view.ViewPager$*{*;}
 -keep class android.support.v7.widget.RecyclerView{*;}
+-keep class android.support.v7.widget.RecyclerView$*{*;}
+-keep class * extends android.support.v7.widget.RecyclerView$Adapter
 ```
 
 ### 开始试验
