@@ -11,9 +11,9 @@
 
 ```
 dependencies {    
-    compile 'com.appadhoc:abtest:5.1.0'
+    compile 'com.appadhoc:abtest:5.1.1'
      //   lite版
-    //    compile 'com.appadhoc:abtest-lite:5.1.0'
+    //    compile 'com.appadhoc:abtest-lite:5.1.1'
 }
 ```
 
@@ -79,7 +79,6 @@ AdhocConfig adhocConfig = new AdhocConfig.Builder()
         .addCustom("age", "17")
         .addCustom("name", "20")
         //调用后,会自动上报崩溃次数统计
-        .reportCrash()
 	// 多进程数据安全
 	.supportMultiProcess
         //调用后,优化指标只有在wifi网络下才会上报数据(可能会造成官网数据延时显示)
@@ -145,12 +144,6 @@ AppAdhoc提供3个预定义指标：访问时长、会话数、崩溃数，只�
 AdhocConfig adhocConfig = new AdhocConfig.Builder()
         .context(this)
         .appKey(key)
-        //调用后,会自动上报崩溃次数统计
-        .reportCrash()
-        //调用后,会自动统计App的session时长
-        .reportDuration()
-        //调用后自动统计session
-        .reportSession()
         .build();
 
 AdhocTracker.init(adhocConfig);
