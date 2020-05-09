@@ -11,9 +11,10 @@
 
 ```
 dependencies {    
-    compile 'com.appadhoc:abtest:5.1.6'
+    implementation 'com.appadhoc:abtest:5.2.2'
+    implementation(name: 'msa_mdid_1.0.13', ext: 'aar')// 设备id包
      //   lite版
-    //    compile 'com.appadhoc:abtest-lite:5.1.6'
+    //    implementation 'com.appadhoc:abtest-lite:5.2.2'
 }
 ```
 
@@ -27,28 +28,44 @@ allprojects {
 }
 ```
 
-### 加入网络权限
+### 加入权限
 
 在项目中找到项目配置文件 AndroidManifest.xml，加入网络访问权限和SDCARD读写权限：
 
 ```
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+//读取手机IMEI的权限，须在获得此权限后再初始化sdk，如果缺少此权限，会以AndroidID作为设备唯一标识符
+<uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
+//获取wifi状态权限
+<uses-permissionandroid:name="android.permission.ACCESS_WIFI_STATE"/>
+
+//读取手机IMEI的权限，须在获得此权限后再初始化sdk，如果缺少此权限，会以AndroidID作为设备唯一标识符
+<uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
+
+//读写sd卡的权限
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
 ```
+
 
 <h3 id="init"> SDK初始化 </h3>
 
 创建Appllication 类，并在OnCreate()中加入下面代码：
 
 ```
-AdhocConfig adhocConfig = new AdhocConfig.Builder()
-        //设置App上下文(必要参数)
-        .context(this)
-        //设置Appkey(必要参数)
-        .appKey(key)
-        .build();
-
-AdhocTracker.init(adhocConfig);
+AdhocTracker.init(this,AdhocConfig.defaultConfig()
+              //this是Context对象
+            //设置Appkey(必要参数)
+            .appKey(key)
+            //开启debug悬浮框
+            .enableDebugAssist(true)
+            //多进程数据安全设置选项
+            //.supportMultiProcess()
+            //开启实时上报
+            //.reportImmediately()
+        );
 ```
 
 需要在AndroidManifest.xml 里指定类名：
@@ -67,25 +84,24 @@ AdhocTracker.init(adhocConfig);
 
 <!-- init方法中，支持的全部配置如下（非必要）：
 ```
-AdhocConfig adhocConfig = new AdhocConfig.Builder()
-        //设置App上下文(必要参数)
-        .context(this)
-        //设置Appkey(必要参数)
-        .appKey(key)
-        //设置clientId,将<xxxx>替换为clientId
-        .clientId("xxxx")
-        //添加定向试验条件（自定义用户标签）
-        .addCustom("sex", "male")
-        .addCustom("age", "17")
-        .addCustom("name", "20")
-        //调用后,会自动上报崩溃次数统计
-	// 多进程数据安全
-	.supportMultiProcess
-        //调用后,优化指标只有在wifi网络下才会上报数据(可能会造成官网数据延时显示)
-        .reportWifi()
-        .build();
+AdhocTracker.init(this,AdhocConfig.defaultConfig()
+              //this是Application Context对象
+            //设置Appkey(必要参数)
+            .appKey(key)
+            //开启debug悬浮框
+            .enableDebugAssist(true)
+            //多进程数据安全设置选项
+            //.supportMultiProcess()
+            //添加自定义属性
+            //.addCustomAttribute("sex","male")
+            //.addCustomAttribute("age","17")
+            //.addCustomAttribute("name","xiaoming")
+            //调用后,优化指标只有在wifi网络下才会上报数据(可能会造成官网数据延时显示)
+            //.reportWifi();
+            //开启实时上报
+            //.reportImmediately()
+        );
 
-AdhocTracker.init(adhocConfig);
 ``` -->
 
 <h3 id="flag"> 编程模式：根据“试验变量”展示相应内容</h3>
@@ -131,29 +147,13 @@ if (AdhocTracker.getFlag("isNewHomePage", false)) {
 AdhocTracker.track("clickTimes", 1);
 ```
 
-### 启用预定义指标
-
-AppAdhoc提供3个预定义指标：访问时长、会话数、崩溃数，只需要在init时添加对应配置，即可获取统计数据。
-
-<p style="color:#aaa">注意：指标值应由PM或相关AB Test需求制定人员在后台选择添加：</p>
-
-![](https://github.com/AppAdhoc/AdhocSDK-Android/raw/master/picture/stats3.png)
-
-在init方法中加入以下配置项：
-```
-AdhocConfig adhocConfig = new AdhocConfig.Builder()
-        .context(this)
-        .appKey(key)
-        .build();
-
-AdhocTracker.init(adhocConfig);
-```
-
 ### 混淆相关
 
 在proguard-rules.txt文件中加入：
 
 ```
+-dontwarn com.bun.miitmdid.**
+-keep class com.bun.miitmdid.** {*;}
 -keep class com.adhoc.** {*;}
 -keep class android.support.v4.view.ViewPager{*;}
 -keep class android.support.v4.view.ViewPager$*{*;}
@@ -190,18 +190,16 @@ AppAdhoc Web SDK 会自动把浏览器名称、版本、语言等用户标签自
 在AdhocTracker.init()方法中进行设置：
 
 ```
-AdhocConfig adhocConfig = new AdhocConfig.Builder()
-        //设置App上下文(必要参数)
-        .context(this)
-        //设置Appkey(必要参数)
-        .appKey(key)
-        //添加自定义用户标签
-        .addCustom("sex", "male")
-        .addCustom("age", "17")
-        .addCustom("name", "20")
-        .build();
 
-AdhocTracker.init(adhocConfig);
+ //this是application对象，设置App上下文(必要参数)
+AdhocTracker.init(this, AdhocConfig.defaultConfig()
+                // 设置Appkey(必要参数)
+                .appKey(APP_KEY)
+                .enableDebugAssist(false)
+                // 添加自定义用户标
+                .addCustomAttribute("key", "value")
+                // 多进程App设置项
+                .supportMultiProcess());
 ```
 
 API 参考
