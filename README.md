@@ -204,4 +204,4 @@ AdhocTracker.init(this, AdhocConfig.defaultConfig()
 
 API 参考
 
-[android SDK API 参考](http://www.appadhoc.com/android/reference/)
+[android SDK API 参考](http://www.appadhoc.com/downloads/android/adhocsdk_api/index.html)
