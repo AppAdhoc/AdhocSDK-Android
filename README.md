@@ -2,7 +2,7 @@
 
 
 [ChangeLog](https://github.com/AppAdhoc/AdhocSDK-Android/blob/master/changelog.md)  
-[Android SDK API 参考](http://www.appadhoc.com/android/reference/)
+[Android SDK API 参考](http://www.appadhoc.com/downloads/android/adhocsdk_api/index.html)
 
 
 ### 集成SDK  
