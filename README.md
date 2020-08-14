@@ -11,10 +11,10 @@
 
 ```
 dependencies {    
-    implementation 'com.appadhoc:abtest:5.2.2'
+    implementation 'com.appadhoc:abtest:5.3.0'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')// 设备id包
      //   lite版
-    //    implementation 'com.appadhoc:abtest-lite:5.2.2'
+    //    implementation 'com.appadhoc:abtest-lite:5.3.0'
 }
 ```
 
