@@ -11,10 +11,12 @@
 
 ```
 dependencies {    
-    implementation 'com.appadhoc:abtest:5.3.0'
+    implementation 'com.appadhoc:abtest:5.4.1'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')// 设备id包
      //   lite版
-    //    implementation 'com.appadhoc:abtest-lite:5.3.0'
+    //    implementation 'com.appadhoc:abtest-lite:5.4.1'
+    // gif图可视化编辑（可选项）
+  // implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.21'(需要支持gif图的用户需要添加该库)
 }
 ```
 
