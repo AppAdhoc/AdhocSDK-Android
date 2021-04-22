@@ -12,11 +12,11 @@
 ```
 dependencies {    
     // 支持可视化编辑和编程模式，support版本
-    implementation 'com.appadhoc:abtest:5.4.3'
-    // implementation 'com.appadhoc:abtestX:5.4.3' //支持可视化和编程版本，androidX版本
+    implementation 'com.appadhoc:abtest:5.4.4'
+    // implementation 'com.appadhoc:abtestX:5.4.4' //支持可视化和编程版本，androidX版本
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')// 设备id包
      //   lite版仅支持编程模式，支持androidX和support
-    //    implementation 'com.appadhoc:abtest-lite:5.4.3'
+    //    implementation 'com.appadhoc:abtest-lite:5.4.4'
     // gif图可视化编辑（可选项）
   // implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.21'(需要支持gif图的用户需要添加该库)
 }
